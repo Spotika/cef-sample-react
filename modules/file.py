@@ -4,7 +4,7 @@ import fnmatch
 import os
 import shutil
 import stat
-from distutils.dir_util import copy_tree
+from shutil import copytree
 
 
 # -----------------------------------------------------------------------------
@@ -207,7 +207,7 @@ def copy_dir(src, dst, symlinks=False, ignore=None, ignore_file=None):
 # -----------------------------------------------------------------------------
 def copy_all_inside(root_path, dst):
     create_dir(dst)
-    copy_tree(root_path, dst, update=1)
+    copytree(root_path, dst, update=1)
 
 
 # -----------------------------------------------------------------------------
